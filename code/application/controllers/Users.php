@@ -12,7 +12,7 @@
     public function index(){
       if($this->session->userdata('logged_in')==FALSE){
         $array['errors'] = $this->session->userdata('errors');
-        $this->load->view('login',$array);
+        $this->load->view('addride',$array);
       } else {
         redirect('Users/success');
       }
