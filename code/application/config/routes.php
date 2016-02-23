@@ -39,6 +39,8 @@
 */
 
 $route['default_controller'] = "/Users/index";
+$route['home'] = "/lunches/index";
+$route['validate_password'] = "/Users/validate_password";
 $route['404_override'] = '';
 
 
