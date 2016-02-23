@@ -17,6 +17,11 @@
         redirect('Users/success');
       }
     }
+    // This function is for a new registration
+    public function new_user() {
+      $this->load->view('registration');
+    }
+
     //This function redirects to loadwall once it updates the user session ID
     public function success(){
       $user = $this->User->get_user_by_id($this->session->userdata('id'));
