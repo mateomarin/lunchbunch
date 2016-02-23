@@ -45,6 +45,5 @@ $route['register'] = "/Users/register";
 $route['new_user'] = "/Users/new_user";
 $route['404_override'] = '';
 
-
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
