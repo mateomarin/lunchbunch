@@ -44,6 +44,7 @@ $route['validate_password'] = "/Users/validate_password";
 $route['register'] = "/Users/register";
 $route['new_user'] = "/Users/new_user";
 $route['login'] = "/Users/login_page";
+$route['profile_view'] = "/Users/profile_view";
 $route['404_override'] = '';
 
 /* End of file routes.php */
