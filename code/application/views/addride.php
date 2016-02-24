@@ -24,7 +24,7 @@
             </option>
           </select>
         </div>
-        <div class="form-group">
+        <div class="newride/form-group">
           <label for="duration">Are you eating there or getting takeout?</label>
           <select class="dropdown" name="seats_avail">
             <option value="1">Eat at Location</option>

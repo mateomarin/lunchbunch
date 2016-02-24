@@ -52,6 +52,9 @@
      <script>
          $(document).load(function()
             {
+                var distance = "";
+                var duration = "";
+
                 function initMap() 
                 {
                     var bounds = new google.maps.LatLngBounds;
@@ -60,9 +63,7 @@
                     var selectedMode = DRIVING;
                     var origin1 = "1980 Zanker Rd #30, San Jose, CA 95112";
                     var destinationA = $array['destination'];
-                    var distance = results[j].distance.text;
-                    var duration = results[j].duration.text;
-
+                    
                     var destinationIcon = 'https://chart.googleapis.com/chart?' + 'chst=d_map_pin_letter&chld=D|FF0000|000000';
                     var originIcon = 'https://chart.googleapis.com/chart?' + 'chst=d_map_pin_letter&chld=O|FFFF00|000000';
                     var map = new google.maps.Map(document.getElementById('map'), 
@@ -79,7 +80,7 @@
                             origins: [origin1],
                             destinations: [destinationA],
                             travelMode: google.maps.TravelMode[selectedMode],
-                            unitSystem: google.maps.UnitSystem.METRIC,
+                            unitSystem: google.maps.UnitSystem.IMPERIAL,
                             avoidHighways: false,
                             avoidTolls: false
                         }, function(response, status) 
@@ -131,10 +132,14 @@
                                                 },
                                                     showGeocodedAddressOnMap(true));
                                             outputDiv.innerHTML += originList[i] + ' to ' + destinationList[j] + ': ' + results[j].distance.text + ' in ' + results[j].duration.text + '<br>';
+                                            distance = results[j].distance.text;
+                                            duration = results[j].duration.text;
                                         }
                                     }
+                                    
                                 }
                             });
+                        return
                     }
 
                 function deleteMarkers(markersArray) 
@@ -146,6 +151,7 @@
                   markersArray = [];
                 }
          });
+         document.getElementById("output").innerHTML = distance +  duration;
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQroyo-GY-YEfdmHQANwVznL8Q2WTBT9s&signed_in=true&callback=initMap"async defer></script>
 
@@ -170,20 +176,28 @@
           </div>
           <div class="ridedetail">
               <ul>
-                  <li>Driver</li>
-                  <li>Where to</li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
+<?php foreach( $result_array as $details){ ?>
+                  <li>Driver: <?= $details['driver'] ?></li>
+                  <li>Where to: <?= $details['destination_name'] ?></li>
+                  <li>Number of Available Seats: <?= $details['seats'] ?></li>
+                  <li>Dining Status: <?= $details['dining status'] ?></li>
+                  <li>Leaving Time: <?= $details['timestamp'] ?></li>
+                  <li>Accepts Orders: <?= $details['orders'] ?></li>
+                  <li>Contact Info: <?= $details['contact'] ?></li>
+<?php } ?>
               </ul>
+              <a href="#"><button>Reserve Seat</button></a>
+              <a href="#"><button>Place Order</button></a>
           </div>
       </div>
       <div>
         <strong>Results</strong>
       </div>
       <div id="output"></div>
+        <p id="output"></p>
+        <script>
+            
+        </script>
       </div>
       <div id="map"></div>
   </body>
