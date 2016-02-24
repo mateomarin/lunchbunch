@@ -22,6 +22,11 @@
       $this->load->view('registration');
     }
 
+    // This function is for logging in 
+    public function login_page() {
+      $this->load->view('login');
+    }
+
     //This function redirects to loadwall once it updates the user session ID
     public function success(){
       $user = $this->User->get_user_by_id($this->session->userdata('id'));
