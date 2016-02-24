@@ -12,7 +12,7 @@
     public function index(){
       if($this->session->userdata('logged_in')==FALSE){
         $array['errors'] = $this->session->userdata('errors');
-        $this->load->view('addride',$array);
+        $this->load->view('index',$array);
       } else {
         redirect('Users/success');
       }
@@ -29,7 +29,7 @@
 
     //This function redirects to loadwall once it updates the user session ID
     public function success(){
-      $user = $this->User->get_user_by_id($this->session->userdata('id'));
+      $data = $this->User->get_user_by_id($this->session->userdata('id'));
       $this->load->view('index', $data);
     }
 

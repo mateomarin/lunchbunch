@@ -14,8 +14,8 @@ class User extends CI_Model {
      }
      function add_user($user)
      {
-         $query = "INSERT INTO Users (first_name, last_name, email, password, contact_cel, created_at, updated_at) VALUES (?,?,?,?,?,?,?)";
-         $values = array($user['first_name'], $user['last_name'], $user['email'], $user['password'], $user['contact_cel'], date("Y-m-d, H:i:s"), date("Y-m-d, H:i:s"));
+         $query = "INSERT INTO Users (first_name, last_name, email, password, created_at, updated_at) VALUES (?,?,?,?,?,?)";
+         $values = array($user['first_name'], $user['last_name'], $user['email'], $user['password'], date("Y-m-d, H:i:s"), date("Y-m-d, H:i:s"));
          return $this->db->query($query, $values);
      }
 }

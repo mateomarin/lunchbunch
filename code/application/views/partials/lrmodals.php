@@ -34,7 +34,7 @@
 			<div class="row">
 				<div class="col s12">
 					<h3 class="center-align heading">Registration</h3>
-					<form class="col s12" action="/validate_password" method="post" role="form">
+					<form class="col s12" action="/register" method="post" role="form">
 						<div class="input-field col s6">
 							<label for="first_name">First Name:</label>
 							<input class="validate" type="text" name="first_name" id="first_name">
