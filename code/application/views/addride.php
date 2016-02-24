@@ -11,7 +11,7 @@
     <script src="/assets/js/newride.js"></script>
 
     <link rel="stylesheet" href="/assets/css/newride.css" type="text/css">
-    
+
   </head>
   <body>
     <div class="container">

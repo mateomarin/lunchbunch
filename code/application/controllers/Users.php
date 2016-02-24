@@ -80,8 +80,10 @@
       redirect("/Users/index");
     }
     //Loads user profile
-    public function profile($id){
-
+    // We haven't made any users yet so I am going to make this function not take any arguments for now
+    // We will change it back once we start actively working with the database
+    public function profile_view(){
+      $this->load->view('profileview');
     }
 
   }
