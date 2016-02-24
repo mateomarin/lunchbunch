@@ -1,0 +1,31 @@
+#pac-input {
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  text-overflow: ellipsis;
+  width: 340px;
+}
+
+.container{
+  margin: 20px auto;
+  width: 700px;
+  text-align: center;
+}
+h2{
+  font-weight: 200;
+}
+select{
+  margin-bottom: 20px;
+}
+
+#pac-input:focus {
+  border-color: #4d90fe;
+}
+
+.pac-container {
+  font-family: Roboto;
+}
+.buttons{
+  margin-top: 20px;
+}
