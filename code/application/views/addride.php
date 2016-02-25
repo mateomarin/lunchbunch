@@ -64,7 +64,7 @@
         </div>
         <div class="row buttons">
           <button class="btn waves-effect waves-light" id="submit-btn" name="action">Create Ride</button>
-          <a href="#"><button type="button" class="btn waves-effect waves-light">Cancel</button></a>
+          <a href="/success"><button type="button" class="btn waves-effect waves-light">Cancel</button></a>
         </div>
       </form>
     </div>

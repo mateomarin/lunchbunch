@@ -9,11 +9,12 @@
     }
     //The index will load the main login page
     public function index(){
-      if($this->session->userdata('logged_in')==FALSE){
-        $array['errors'] = $this->session->userdata('errors');
-        $this->load->view('index',$array);
-      } else {
-        redirect('Users/index');
+      if($this->session->userdata('logged_in')===FALSE){
+        $this->load->view('index');
+      } 
+      else {
+        $rides['rides'] = $this->Ride->get_ride_by_day();
+        $this->load->view('mainview', $rides);
       }
     }
     // This function is for a new registration
@@ -44,6 +45,7 @@
         $user = $this->User->get_user_by_email($logindata['email']);
         if($user && $user['password']==md5($logindata['password'])){
           $this->session->set_userdata('id',$user['id']);
+          $this->session->set_userdata('logged_in', TRUE);
           redirect("/Users/success");
         } else {
           $this->session->set_userdata('errors', 'Incorrect Password');

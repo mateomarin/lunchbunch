@@ -19,7 +19,7 @@
 	<link rel="stylesheet" href="assets/css/home.css">
 </head>
 <body>
- <?php require('/partials/navbar2.php'); ?>
+ <?php require('/partials/navbar.php'); ?>
 	<div class="container">
         <div class="row">
 			<div class="col s12">
@@ -99,7 +99,6 @@
                 </form>
 			</div>
 		</div>
-		<?php require('/partials/lrmodals.php'); ?>
 	</div>
 </body>
 </html>
