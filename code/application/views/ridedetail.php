@@ -171,7 +171,7 @@
 
   </head>
   <body>
-<?php require('partials/navbar2.php'); ?>
+<?php require('partials/navbar.php'); ?>
     <div id="right-panel">
       <div id="floating-panel">
           <h1>Ride Details:</h1>
@@ -179,18 +179,15 @@
             <img src="" alt="driver pic">
             <div class="ride_details">
                 <ul>
-<?php foreach( $result_array as $details){ ?>
-                    <li><?= $details['destination_name'] ?></li>
-                    <li><?= $details['dining status'] ?></li>
-                    <li><?= $details['timestamp'] ?></li>
-                    <li><?= $details['accepts_order_id'] ?></li>
-<?php } ?>
+                    <li><?= $rides['destination_name'] ?></li>
+                    <li><?= $rides['seats_avail'] ?></li>
+                    <li><?= $rides['created_at'] ?></li>
+                    <li><?= $rides['accepts_order'] ?></li>
                 </ul>
             </div>
           </div>
           <div class="ridedetail">
               <ul>
-<?php foreach( $result_array as $details){ ?>
                   <li>Driver: <?= $details['driver'] ?></li>
                   <li>Where to: <?= $details['destination_name'] ?></li>
                   <li>Number of Available Seats: <?= $details['seats'] ?></li>
@@ -198,7 +195,6 @@
                   <li>Leaving Time: <?= $details['timestamp'] ?></li>
                   <li>Accepts Orders: <?= $details['orders'] ?></li>
                   <li>Contact Info: <?= $details['contact'] ?></li>
-<?php } ?>
               </ul>
               <a href="#"><button>Reserve Seat</button></a>
               <a href="#"><button>Place Order</button></a>

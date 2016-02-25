@@ -10,7 +10,7 @@
       $this->load->view('addride');
     }
 
-    public function add_new_ride(){
+    public function add_new_ride($user_id){
       $ride=$this->input->post();
       $ride['departure_time']=date("Y-m-d, h:i:s",strtotime($ride['departure_time']));
 
@@ -19,14 +19,16 @@
       } else {
         $ride['accepts_order']= 0;
       }
-      $this->Ride->add_ride($ride);
+      $ride_id0 = $this->Ride->add_ride($ride);
+      $ride_id = strval($ride_id0);
+      $this->Ride->add_user_ride_rel($user_id, $ride_id, 1);
       redirect('/Users/success');
     }
 
     public function load_ride_detail($ride_id)
     {
-        $ride = $this->Ride->get_ride_by_id($ride_id);
-        $this->load->view('ridedetail',$ride);
+        $rides['rides'] = $this->Ride->get_ride_by_id($ride_id);
+        $this->load->view('ridedetail', $rides);
     }
   }
 

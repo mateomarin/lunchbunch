@@ -17,7 +17,7 @@
   <body>
     <div class="container">
       <h2>Create a New Ride:</h2>
-      <form class="form" action="/add_new_ride" method="post">
+      <form class="form" action="/add_new_ride/<?= $this->session->userdata('id') ?>" method="post">
       <input type="hidden" id="lat" name="destination_lat" value="">
       <input type="hidden" id="lng" name="destination_lng" value="">
       <input type="hidden" id="lat_origin" name="origin_lat" value="37.377216">

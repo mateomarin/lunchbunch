@@ -47,7 +47,7 @@ $route['login'] = "/Users/login_page";
 $route['logout'] = "/Users/logout";
 $route['success'] = "/Users/success";
 $route['profile_view'] = "/Users/profile_view";
-$route['add_new_ride'] = "/Rides/add_new_ride";
+$route['add_new_ride/(:any)'] = "/Rides/add_new_ride/$1";
 $route['404_override'] = '';
 
 /* End of file routes.php */
