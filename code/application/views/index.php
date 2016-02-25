@@ -16,33 +16,19 @@
 	<!-- Navigation JS -->
 	<script src="assets/js/nav.js"></script>
 	<!-- My CSS -->
-	<link rel="stylesheet" href="/assets/css/home.css">
+	<link rel="stylesheet" href="assets/css/home.css">
 </head>
 <body>
 	<?php require('partials/navbar2.php'); ?>
 	<div class="container">
-		<div class="header-container">
-            <div class="video-container">
-                <video preload="true" autoplay="autoplay" loop="loop" volume="0" poster="pic.jpg">
-                    <source src="/assets/CSS/MBV2.mp4" type="video/mp4" >
-                </video>
-            </div>
-        </div>
-        <embed src="/assets/vid/MBV2.mp4">
-			<video width="320" height="240" controls>
-                <source src="/assets/css/MBV2.mp4" type="video/mp4">
-            </video>
-
 
         <div class="fullscreen-bg">
             <video loop muted autoplay poster="img/videoframe.jpg" class="fullscreen-bg__video">
-                <source src="/assets/vid/MBV2.mp4" type="video/mp4">
-
+                <source src="assets/vid/MBV2.mp4" type="video/mp4">
             </video>
         </div>
-
-		<div class="row">
-
+//I made this change
+		<div class="row">            
 		</div>
 	<!-- Modal Structure Goes Here -->
 	<?php require('partials/lrmodals.php'); ?>
