@@ -11,6 +11,7 @@
       $this->load->view('addride');
     }
 
-  
+  }
+
 
 ?>
