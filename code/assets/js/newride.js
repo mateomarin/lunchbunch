@@ -28,9 +28,9 @@ $(document).ready(function(){
 
     // $('#submit-btn').on('click', function() {
     //     var data0 = {
-    //     destination_coord:"1", seats_avail:$("select[name='seats_avail']").val(), departure_time:$("input[name='departure_time']").val(), duration_id:$("select[name='duration_id']").val(), accepts_order_id:$("input[name='accepts_order_id']").val(), takeout_fee:$("input[name='takeout_fee']").val() 
+    //     destination_coord:"1", seats_avail:$("select[name='seats_avail']").val(), departure_time:$("input[name='departure_time']").val(), duration_id:$("select[name='duration_id']").val(), accepts_order_id:$("input[name='accepts_order_id']").val(), takeout_fee:$("input[name='takeout_fee']").val()
     //     };
-       
+
     //     $.ajax({
     //         type: "POST",
     //         url: "/Rides/add_new_ride",

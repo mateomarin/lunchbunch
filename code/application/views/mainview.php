@@ -24,9 +24,8 @@
 <?php 	foreach($rides as $ride) { ?>
 		<div class="row">
 			<div class="col s12">
-				<h3><?= $ride['destination_name'] ?></h3>
+				<a href=<?php echo "/Rides/load_ride_detail/".$ride['id']?>><h3><?= $ride['destination_name'] ?></h3></a>
 				<p><?= $ride['created_at'] ?></p>
-				<p><?= $ride['departure_time'] ?></p>
 				<p><?= $ride['departure_time'] ?></p>
 			</div>
 		</div>

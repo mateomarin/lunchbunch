@@ -27,7 +27,9 @@
                 <source src="assets/vid/MBV2.mp4" type="video/mp4">
             </video>
         </div>
+
 //I made this change
+
 		<div class="row">            
 		</div>
 	<!-- Modal Structure Goes Here -->
