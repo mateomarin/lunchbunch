@@ -4,7 +4,7 @@
   class Users extends CI_Controller{
     public function __construct(){
       parent::__construct();
-      $this->output->enable_profiler();
+//      $this->output->enable_profiler();
       $this->load->model('User');
 
     }
@@ -14,7 +14,7 @@
         $array['errors'] = $this->session->userdata('errors');
         $this->load->view('index',$array);
       } else {
-        redirect('Users/success');
+        redirect('Users/index');
       }
     }
     // This function is for a new registration
