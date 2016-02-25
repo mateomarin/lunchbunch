@@ -4,9 +4,9 @@ class Ride extends CI_Model {
      {
          return $this->db->query("SELECT * FROM Rides")->result_array();
      }
-     function get_ride_by_day($day)
+     function get_ride_by_day()
      {
-         return $this->db->query("SELECT * FROM Rides WHERE created_at = ?", $day)->row_array();
+         return $this->db->query("SELECT * FROM Rides WHERE created_at = DATE(NOW())")->result_array();
      }
      function get_ride_by_id($ride_id)
      {
