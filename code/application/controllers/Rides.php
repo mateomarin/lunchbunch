@@ -21,16 +21,11 @@
       $this->Ride->add_ride($ride);
       redirect('/Users/success');
     }
-    public function load_ride_detail()
+
+    public function load_ride_detail($ride_id)
     {
         $this->Ride->get_ride_by_day()->$result_array;
         $this->load->view('ridedetail',$result_array);
-    }
-
-    public function load_all_rides()
-    {
-        $this->Ride->get_all_rides()->$result_array;
-        $this->load->view('Users/index',$result_array);
     }
   }
 
