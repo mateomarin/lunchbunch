@@ -25,14 +25,14 @@ $(document).ready(function(){
     $('#departure_time').timepicker();
 
     $('#submit-btn').on('click', function() {
-        var data = {
-        destination_coord:coord, seats_avail:$("select[name='seats_avail']").val(), departure_time:$("input[name='departure_time']").val(), duration_id:$("select[name='duration_id']").val(), accepts_order_id:$("input[name='accepts_order_id']").val(), takeout_fee:$("input[name='takeout_fee']").val() 
+        var data0 = {
+        destination_coord:"1", seats_avail:$("select[name='seats_avail']").val(), departure_time:$("input[name='departure_time']").val(), duration_id:$("select[name='duration_id']").val(), accepts_order_id:$("input[name='accepts_order_id']").val(), takeout_fee:$("input[name='takeout_fee']").val() 
         };
-        console.log(data);
+        console.log(data0);
         $.ajax({
             type: "POST",
             url: "/Rides/add_new_ride",
-            data: data,
+            data: data0,
             success: function() {
                 window.location.href = "/success";
             },

@@ -13,8 +13,8 @@
 
     public function add_new_ride(){
       $ride=$this->input->post();
-      $ride['destination_coord']=$ride['destination_coord'][0];
       var_dump($ride);
+      die();
       $this->Ride->add_ride($ride);
       redirect('/Users/success');
     }
