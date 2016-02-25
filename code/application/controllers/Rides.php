@@ -5,6 +5,7 @@
     public function __construct(){
       parent::__construct();
       $this->load->model('Ride');
+      $this->load->model('Notification');
     }
     public function add_new_ride_page(){
       $this->load->view('addride');
@@ -22,6 +23,7 @@
       $ride_id0 = $this->Ride->add_ride($ride);
       $ride_id = strval($ride_id0);
       $this->Ride->add_user_ride_rel($user_id, $ride_id, 1);
+      $this->Notification->add_ride_notification($user_id,1,$ride_id);
       redirect('/Users/success');
     }
 
