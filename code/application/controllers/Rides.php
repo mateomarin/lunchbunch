@@ -19,7 +19,7 @@
         $ride['accepts_order']= 0;
       }
       $this->Ride->add_ride($ride);
-      redirect('/Users/success')
+      redirect('/Users/success');
     }
     public function load_ride_detail()
     {
