@@ -20,3 +20,4 @@ class Ride extends CI_Model {
      }
 }
 ?>
+

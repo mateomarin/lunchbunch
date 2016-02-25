@@ -13,13 +13,20 @@
 
     public function add_new_ride(){
       $ride=$this->input->post();
-      var_dump($ride);
-      die();
       $this->Ride->add_ride($ride);
       redirect('/Users/success');
     }
-
+    public function load_ride_detail()
+    {
+        $this->Ride->get_ride_by_day()->$result_array;
+        $this->load->view('ridedetail',$result_array);
+    }
+    
+    public function load_all_rides()
+    {
+        $this->Ride->get_all_rides()->$result_array;
+        $this->load->view('Users/index',$result_array);
+    }
   }
-
 
 ?>
