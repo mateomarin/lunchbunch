@@ -19,7 +19,7 @@
 	<link rel="stylesheet" href="/assets/css/home.css">
 </head>
 <body>
-	<?php require('/partials/navbar.php'); ?>
+	<?php require('partials/navbar.php'); ?>
 	<div class="container">
 <?php 	foreach($rides as $ride) { ?>
 		<div class="row">

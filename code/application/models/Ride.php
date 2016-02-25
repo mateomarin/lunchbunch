@@ -14,10 +14,9 @@ class Ride extends CI_Model {
      }
      function add_ride($ride)
      {
-         $query = "INSERT INTO Rides (destination_name, destination_coord, seats_avail, departure_time, created_at, updated_at, duration_id, accepts_order_id) VALUES (?,?,?,?,?,?,?,?)";
-         $values = array($ride['destination_name'], $ride['destination_coord'], $ride['seats_avail'], $ride['departure_time'], date("Y-m-d, H:i:s"), date("Y-m-d, H:i:s"), $ride['duration_id'], $ride['accepts_order_id']);
+         $query = "INSERT INTO Rides (destination_name, destination_lat, destination_lng, seats_avail, departure_time, created_at, updated_at, duration, accepts_order) VALUES (?,?,?,?,?,?,?,?,?)";
+         $values = array($ride['destination_name'], $ride['destination_lat'], $ride['destination_lng'], $ride['seats_avail'], $ride['departure_time'], date("Y-m-d"), date("Y-m-d, H:i:s"), $ride['duration'], $ride['accepts_order']);
          return $this->db->query($query, $values);
      }
 }
 ?>
-

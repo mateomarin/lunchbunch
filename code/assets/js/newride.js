@@ -24,7 +24,7 @@ $(document).ready(function(){
         $("input[id='lng']").val(coord[1]);
     });
 
-    $('#departure_time').timepicker();
+    $('#departure_time').timepicker({ timeFormat: 'HH:mm:ss' });
 
     // $('#submit-btn').on('click', function() {
     //     var data0 = {
