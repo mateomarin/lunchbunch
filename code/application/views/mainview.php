@@ -21,9 +21,16 @@
 <body>
 	<?php require('/partials/navbar.php'); ?>
 	<div class="container">
+<?php 	foreach($rides as $ride) { ?>
 		<div class="row">
-			
+			<div class="col s12">
+				<h3><?= $ride['destination_name'] ?></h3>
+				<p><?= $ride['created_at'] ?></p>
+				<p><?= $ride['departure_time'] ?></p>
+				<p><?= $ride['departure_time'] ?></p>
+			</div>
 		</div>
+<?php 	} ?>
 	</div>
 </body>
 </html>
