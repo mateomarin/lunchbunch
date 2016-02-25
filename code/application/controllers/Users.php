@@ -11,7 +11,7 @@
     public function index(){
       if($this->session->userdata('logged_in')===FALSE){
         $this->load->view('index');
-      } 
+      }
       else {
         $rides['rides'] = $this->Ride->get_ride_by_day();
         $this->load->view('mainview', $rides);
@@ -22,7 +22,7 @@
       $this->load->view('registration');
     }
 
-    // This function is for logging in 
+    // This function is for logging in
     public function login_page() {
       $this->load->view('login');
     }
