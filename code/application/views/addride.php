@@ -12,7 +12,7 @@
     <script src="/assets/js/timepicker/jquery.timepicker.min.js"></script>
     <link rel="stylesheet" href="/assets/js/timepicker/jquery.timepicker.css">
     <link rel="stylesheet" href="/assets/css/newride.css" type="text/css">
-    
+
   </head>
   <body>
     <div class="container">
@@ -37,7 +37,7 @@
         <div class="row">
           <div class="input-field col s3"></div>
           <div class="input-field col s6">
-            <select class="duration_id" name="duration_id">
+            <select class="duration" name="duration">
               <option value="" disabled selected>Are you eating there or getting takeout?</option>
               <option value="0">Eat at Location</option>
               <option value="1">Takeout</option>
@@ -52,7 +52,7 @@
           </div>
         </div>
         <div>
-            <input type="checkbox" name="accepts_order_id" class="filled-in" id="filled-in-box">
+            <input type="checkbox" name="accepts_order" class="filled-in" id="filled-in-box">
             <label for="filled-in-box">Yeah, sure, i'll take orders for takeout!</label>
         </div>
         <div class="row">
