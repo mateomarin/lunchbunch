@@ -18,7 +18,8 @@
     <div class="container">
       <h2>Create a New Ride:</h2>
       <form class="form" action="/add_new_ride" method="post">
-      <input type="hidden" name="destination_">
+      <input type="hidden" id="lat" name="destination_lat" value="">
+      <input type="hidden" id="lng" name="destination_lng" value="">
         <div class="row">
           <div class="input-field col s12">
             <input id="pac-input" class="validate" type="text" name="destination_name">

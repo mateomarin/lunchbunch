@@ -4,7 +4,6 @@
   class Rides extends CI_Controller{
     public function __construct(){
       parent::__construct();
-      $this->output->enable_profiler();
       $this->load->model('Ride');
     }
     public function add_new_ride_page(){
@@ -14,7 +13,6 @@
     public function add_new_ride(){
       $ride=$this->input->post();
       $this->Ride->add_ride($ride);
-      redirect('/Users/success');
     }
     public function load_ride_detail()
     {
