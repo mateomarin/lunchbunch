@@ -171,7 +171,7 @@
 
   </head>
   <body>
-<?php require('partials/navbar2.php'); ?>
+<?php require('partials/navbar.php'); ?>
     <div id="right-panel">
       <div id="floating-panel">
           <h1>Ride Details:</h1>
@@ -179,10 +179,10 @@
             <img src="" alt="driver pic">
             <div class="ride_details">
                 <ul>
-<?php foreach( $result_array as $details){ ?>
+<?php foreach( $rides as $details){ ?>
                     <li><?= $details['destination_name'] ?></li>
-                    <li><?= $details['dining status'] ?></li>
-                    <li><?= $details['timestamp'] ?></li>
+                    <li><?= $details[''] ?></li>
+                    <li><?= $details['created_at'] ?></li>
                     <li><?= $details['accepts_order_id'] ?></li>
 <?php } ?>
                 </ul>
@@ -190,7 +190,7 @@
           </div>
           <div class="ridedetail">
               <ul>
-<?php foreach( $result_array as $details){ ?>
+<?php foreach( $rides as $details){ ?>
                   <li>Driver: <?= $details['driver'] ?></li>
                   <li>Where to: <?= $details['destination_name'] ?></li>
                   <li>Number of Available Seats: <?= $details['seats'] ?></li>
