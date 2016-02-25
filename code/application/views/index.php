@@ -19,15 +19,13 @@
 	<link rel="stylesheet" href="assets/css/home.css">
 </head>
 <body>
-	<?php require('/partials/navbar2.php'); ?>
+	<?php require('partials/navbar2.php'); ?>
 	<div class="container">
         <div class="fullscreen-bg">
             <video loop muted autoplay poster="img/videoframe.jpg" class="fullscreen-bg__video">
                 <source src="assets/vid/MBV2.mp4" type="video/mp4">
             </video>
         </div>
-        
-//I made this change
 		<div class="row">            
 		</div>
 	<!-- Modal Structure Goes Here -->
