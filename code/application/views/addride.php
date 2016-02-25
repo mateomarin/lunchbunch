@@ -20,6 +20,8 @@
       <form class="form" action="/add_new_ride" method="post">
       <input type="hidden" id="lat" name="destination_lat" value="">
       <input type="hidden" id="lng" name="destination_lng" value="">
+      <input type="hidden" id="lat_origin" name="origin_lat" value="37.377216">
+      <input type="hidden" id="lng_origin" name="origin_lng" value="-121.9141138">
         <div class="row">
           <div class="input-field col s12">
             <input id="pac-input" class="validate" type="text" name="destination_name">

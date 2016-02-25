@@ -12,14 +12,21 @@
 
     public function add_new_ride(){
       $ride=$this->input->post();
+      $ride['departure_time']=date("h:i:s",strtotime($ride['departure_time']));
+      if($ride['accepts_order']=='on'){
+        $ride['accepts_order']=1;
+      } else {
+        $ride['accepts_order']= 0;
+      }
       $this->Ride->add_ride($ride);
+      redirect('/Users/success')
     }
     public function load_ride_detail()
     {
         $this->Ride->get_ride_by_day()->$result_array;
         $this->load->view('ridedetail',$result_array);
     }
-    
+
     public function load_all_rides()
     {
         $this->Ride->get_all_rides()->$result_array;
