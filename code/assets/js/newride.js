@@ -40,7 +40,7 @@ $(document).ready(function(){
                 console.log('Its fucked up');
             }
         });
-        return false;
+        // return false;
 
     });
 
