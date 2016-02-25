@@ -9,14 +9,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQroyo-GY-YEfdmHQANwVznL8Q2WTBT9s&libraries=places"></script>
     <script src="/assets/js/newride.js"></script>
-
+    <script src="/assets/js/timepicker/jquery.timepicker.min.js"></script>
+    <link rel="stylesheet" href="/assets/js/timepicker/jquery.timepicker.css">
     <link rel="stylesheet" href="/assets/css/newride.css" type="text/css">
-
+    
   </head>
   <body>
     <div class="container">
       <h2>Create a New Ride:</h2>
-      <form class="form" action="#" method="post">
+      <form class="form" action="/add_new_ride" method="post">
+      <input type="hidden" name="destination_">
         <div class="row">
           <div class="input-field col s12">
             <input id="pac-input" class="validate" type="text" name="destination_name">
@@ -25,42 +27,42 @@
         <div class="row">
           <div class="input-field col s3"></div>
           <div class="input-field col s6">
-            <select>
+            <select name="seats_avail">
               <option value="" disabled selected>How many places available?</option>
-              <option>1</option>
+              <option value="1">1</option>
             </select>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s3"></div>
           <div class="input-field col s6">
-            <select>
+            <select class="duration_id" name="duration_id">
               <option value="" disabled selected>Are you eating there or getting takeout?</option>
-              <option>Eat at Location</option>
-              <option>Takeout</option>
+              <option value="0">Eat at Location</option>
+              <option value="1">Takeout</option>
             </select>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s3"></div>
           <div class="input-field col s6">
-            <input type="text" id="departure_time" class="validate">
+            <input type="text" id="departure_time" name="departure_time" class="validate">
             <label for="departure_time">What time are you leaving?</label>
           </div>
         </div>
         <div>
-            <input type="checkbox"  class="filled-in" id="filled-in-box">
+            <input type="checkbox" name="accepts_order_id" class="filled-in" id="filled-in-box">
             <label for="filled-in-box">Yeah, sure, i'll take orders for takeout!</label>
         </div>
         <div class="row">
           <div class="input-field col s3"></div>
           <div class="input-field col s6">
-              <input type="text" id="fee" class="require-if-active" data-require-pair="#filled-in-box">
+              <input type="text" id="fee" name="takeout_fee" class="require-if-active" data-require-pair="#filled-in-box">
               <label for="fee">What is your takeout fee?</label>
             </div>
         </div>
         <div class="row buttons">
-          <button class="btn waves-effect waves-light" type="submit" name="action">Create Ride</button>
+          <button class="btn waves-effect waves-light" id="submit-btn" name="action">Create Ride</button>
           <a href="#"><button type="button" class="btn waves-effect waves-light">Cancel</button></a>
         </div>
       </form>

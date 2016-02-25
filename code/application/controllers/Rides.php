@@ -10,11 +10,16 @@
     public function add_new_ride_page(){
       $this->load->view('addride');
     }
+
     public function add_new_ride(){
       $ride=$this->input->post();
+      var_dump($ride);
+      die();
       $this->Ride->add_ride($ride);
       redirect('/Users/success');
     }
+
   }
+
 
 ?>

@@ -39,12 +39,15 @@
 */
 
 $route['default_controller'] = "/Users/index";
-$route['home'] = "/lunches/index";
+$route['index'] = "/Users/index";
 $route['validate_password'] = "/Users/validate_password";
 $route['register'] = "/Users/register";
 $route['new_user'] = "/Users/new_user";
 $route['login'] = "/Users/login_page";
+$route['logout'] = "/Users/logout";
+$route['success'] = "/Users/success";
 $route['profile_view'] = "/Users/profile_view";
+$route['add_new_ride'] = "/Rides/add_new_ride";
 $route['404_override'] = '';
 
 /* End of file routes.php */

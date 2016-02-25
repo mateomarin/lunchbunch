@@ -1,28 +1,21 @@
-	<nav class="navbar navbar-inverse navbar-static-top">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-					<span class="glyphicon glyphicon-cutlery white"></span>
-				</button>
-				<a class="navbar-brand" href="#">Munch Bunch</a>
-			</div>
-			<div class="collapse navbar-collapse" id="myNavbar">
-				<ul class="nav navbar-nav navbar-right">
-					<li class="drop-menu"><a class="create-btn" href="#"><span class="glyphicon glyphicon-road"></span> Create New Ride</a></li>
-					<li class="dropdown drop-menu">
-						<div class="btn-group">
-							<button type="button" class="marge btn btn-default dropdown-toggle navbar-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<span class="glyphicon glyphicon-th-list"></span>
-							</button>
-							<ul class="dropdown-menu">
-								<li><a href="#"><span class="glyphicon glyphicon-user"></span> User Profile</a></li>
-								<li role="separator" class="divider"></li>
-								<li><a href="#"><span class="glyphicon glyphicon-pencil"></span> Sign Up</a></li>
-								<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-							</ul>
-						</div>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+<!-- This is my dropdown menu code -->
+<ul id="dropdown1" class="dropdown-content">
+  <li><a href="/profile_view">User Profile</a></li>
+  <li class="divider"></li>
+  <li><a href="/logout">Log Out</a></li>
+</ul>
+
+<nav>
+    <div class="nav-wrapper">
+        <a href="/index" class="brand-logo"><img width="104" height="64" src="/assets/img/munchbunches.png"></a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="/Rides/add_new_ride_page"><i class="material-icons left">room</i>Create New Ride</a></li>
+            <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons">reorder</i></a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+            <li><a href="sass.html">User Profile</a></li>
+            <li><a href="/logout">Log Out</a></li>
+        </ul>
+    </div>
+</nav>
