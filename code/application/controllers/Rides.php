@@ -24,8 +24,8 @@
 
     public function load_ride_detail($ride_id)
     {
-        $this->Ride->get_ride_by_day()->$result_array;
-        $this->load->view('ridedetail',$result_array);
+        $ride = $this->Ride->get_ride_by_id($ride_id);
+        $this->load->view('ridedetail',$ride);
     }
   }
 
