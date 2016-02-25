@@ -157,7 +157,7 @@
 
   </head>
   <body>
-<?php require('/partials/navbar.php'); ?>
+<?php require('/partials/navbar2.php'); ?>
     <div id="right-panel">
       <div id="floating-panel">
           <h1>Ride Details:</h1>
