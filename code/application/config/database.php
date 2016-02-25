@@ -50,13 +50,10 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
-<<<<<<< HEAD
+
 $db['default']['password'] = 'root';
 $db['default']['database'] = 'munchride';
-=======
-$db['default']['password'] = '';
-$db['default']['database'] = 'lunchbunch';
->>>>>>> 484eb161db22120786af537df9b14cfca2c0b3d3
+
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
