@@ -71,6 +71,7 @@
         $this->User->add_user($userdata);
         $user = $this->User->get_user_by_email($userdata['email']);
         $this->session->set_userdata('id',$user['id']);
+        $this->session->set_userdata('logged_in', TRUE);
         redirect("/Users/success");
       }
     }
