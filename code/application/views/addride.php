@@ -17,7 +17,7 @@
   <body>
     <div class="container">
       <h2>Create a New Ride:</h2>
-      <form class="form" action="#" method="post">
+      <form class="form" action="/add_new_ride" method="post">
       <input type="hidden" name="destination_">
         <div class="row">
           <div class="input-field col s12">
@@ -29,17 +29,17 @@
           <div class="input-field col s6">
             <select name="seats_avail">
               <option value="" disabled selected>How many places available?</option>
-              <option>1</option>
+              <option value="1">1</option>
             </select>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s3"></div>
           <div class="input-field col s6">
-            <select class="duration_id">
+            <select class="duration_id" name="duration_id">
               <option value="" disabled selected>Are you eating there or getting takeout?</option>
-              <option>Eat at Location</option>
-              <option>Takeout</option>
+              <option value="0">Eat at Location</option>
+              <option value="1">Takeout</option>
             </select>
           </div>
         </div>
@@ -62,7 +62,7 @@
             </div>
         </div>
         <div class="row buttons">
-          <button class="btn waves-effect waves-light" type="submit" name="action">Create Ride</button>
+          <button class="btn waves-effect waves-light" id="submit-btn" name="action">Create Ride</button>
           <a href="#"><button type="button" class="btn waves-effect waves-light">Cancel</button></a>
         </div>
       </form>
