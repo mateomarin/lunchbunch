@@ -23,10 +23,17 @@
 	<div class="container">
 <?php 	foreach($rides as $ride) { ?>
 		<div class="row">
-			<div class="col s12">
-				<a href=<?php echo "/Rides/load_ride_detail/".$ride['id']?>><h3><?= $ride['destination_name'] ?></h3></a>
-				<p><?= $ride['created_at'] ?></p>
-				<p><?= $ride['departure_time'] ?></p>
+			<div class="col s12 contents">
+				<div class="card grey lighten-3">
+					<div class="card-content black-text">
+						<a class="card-title" href="/Rides/load_ride_detail/<?= $ride['id'] ?>"><h3><?= $ride['destination_name'] ?></h3></a>
+						<p><?= $ride['created_at'] ?></p>
+						<p><?= $ride['departure_time'] ?></p>
+					</div>
+					<div class="card-action">
+						<a href="/Rides/join_ride/<?= $ride['id'] ?>"><button class="btn-flat">Join Ride</button></a>
+					</div>
+				</div>
 			</div>
 		</div>
 <?php 	} ?>

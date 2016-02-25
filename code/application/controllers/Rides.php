@@ -32,6 +32,15 @@
         $rides['rides'] = $this->Ride->get_ride_by_id($ride_id);
         $this->load->view('ridedetail', $rides);
     }
+
+    public function join_ride($ride_id)
+    {
+      $user_id = $this->session->userdata('id');
+      $user_type = 0;
+      $this->Ride->add_user_ride_rel($user_id, $ride_id, $user_type);
+      $this->Ride->update_seats($ride_id);
+      redirect('/success');
+    }
   }
 
 ?>
