@@ -4,3 +4,5 @@ $(document).ready(function(){
 	// Activate the side menu 
 	$(".button-collapse").sideNav();
 });
+
+// this is all the code for modal triggers and mobile view side nav

@@ -8,7 +8,7 @@
 
 <nav>
     <div class="nav-wrapper">
-        <a href="#!" class="brand-logo"><img src="/assets/img/munchbunch.png"></a>
+        <a href="#!" class="brand-logo"><img width="104" height="64" src="/assets/img/munchbunches.png"></a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
             <li><a href="badges.html"><i class="material-icons left">room</i>Create New Ride</a></li>
