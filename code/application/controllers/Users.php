@@ -13,7 +13,7 @@
         $array['errors'] = $this->session->userdata('errors');
         $this->load->view('index',$array);
       } else {
-        redirect('Users/success');
+        redirect('Users/index');
       }
     }
     // This function is for a new registration
