@@ -10,7 +10,7 @@ html, body {
 
 nav {
 	background: rgba(0, 0, 0, 0.7);
-	
+
 }
 
 .dropdown-content li>a {
@@ -44,7 +44,7 @@ nav {
 	margin-left: 20px;
 }
 
-video#bgvid { 
+video#bgvid {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -58,6 +58,5 @@ video#bgvid {
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
     background: url(polina.jpg) no-repeat;
-    background-size: cover; 
+    background-size: cover;
 }
-
