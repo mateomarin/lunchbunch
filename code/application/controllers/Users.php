@@ -30,7 +30,7 @@
     //This function redirects to loadwall once it updates the user session ID
     public function success(){
       $data = $this->User->get_user_by_id($this->session->userdata('id'));
-      $this->load->view('index', $data);
+      $this->load->view('mainview', $data);
     }
 
     // This function validates whether the password is valid and it matches the confirmation.
@@ -61,7 +61,7 @@
       $this->form_validation->set_rules('password', 'Password must be at least 8 characters', 'min_length[8]|matches[confirm_pass]|required');
       if($this->form_validation->run()==FALSE){
         $this->session->set_userdata('errors', validation_errors());
-        redirect("/Users/index");
+        redirect("/index");
       } else {
         $userdata = $this->input->post();
         $userdata['password'] = md5($userdata['password']);
@@ -77,7 +77,7 @@
     public function logout(){
       $this->session->unset_userdata('id');
       $this->session->sess_destroy();
-      redirect("/Users/index");
+      redirect("/index");
     }
     //Loads user profile
     // We haven't made any users yet so I am going to make this function not take any arguments for now
