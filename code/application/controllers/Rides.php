@@ -7,7 +7,7 @@
       $this->output->enable_profiler();
       $this->load->model('Ride');
     }
-    public function add_new_ride(){
+    public function add_new_ride_page(){
       $this->load->view('addride');
     }
 
