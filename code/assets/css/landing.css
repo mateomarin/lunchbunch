@@ -70,6 +70,7 @@ video#bgvid {
 .bigger {
 	font-size: 3.0em;
 	margin-bottom: 0px !important;
+	margin-top: 0px !important;
 }
 
 .bolder {
