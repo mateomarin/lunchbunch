@@ -53,3 +53,15 @@ video#bgvid {
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
 }
+
+.card, .card-action {
+	text-align: center;
+}
+
+.card-bg, .grey.lighten-3 {
+	background: rgba(255,255,255,0.7) !important;
+}
+
+.card-wrapper {
+	margin-top: 20%;
+}
