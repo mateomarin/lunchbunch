@@ -22,7 +22,11 @@
 <body>
 	<?php require('partials/navbar.php'); ?>
 	<div class="container">
-		<h4 class="center-align notif-heading">Takeout Orders Placed by You</h4>
+		<div class="row">
+			<div class="amber darken-4 header">
+				<h4 class="center-align notif-heading white-text">Takeout Orders Placed by You</h4>
+			</div>
+		</div>
     <?php if($takeouts_ordered!=array()){
 			foreach($takeouts_ordered as $takeout){?>
 				<div class="row">
@@ -46,7 +50,11 @@
 					</div>
 				</div>
     <?php } }?>
-		<h4 class="center-align notif-heading">Takeout Orders Received from Friends</h4>
+    	<div class="row">
+    		<div class="amber darken-4 header">
+				<h4 class="center-align notif-heading white-text">Takeout Orders Received from Friends</h4>
+			</div>
+		</div>
     <?php if($takeouts_received!=array()){
 			foreach($takeouts_received as $takeout){?>
 				<div class="row">

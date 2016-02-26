@@ -91,7 +91,9 @@
     // We haven't made any users yet so I am going to make this function not take any arguments for now
     // We will change it back once we start actively working with the database
     public function profile_view(){
-      $this->load->view('profileview');
+      $user_id = $this->session->userdata('id');
+      $rides['user'] = $this->User->get_user_by_id($user_id);
+      $this->load->view('profileview', $rides);
     }
 
   }
