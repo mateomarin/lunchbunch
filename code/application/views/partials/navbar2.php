@@ -1,7 +1,5 @@
 <!-- This is my dropdown menu code -->
 <ul id="dropdown1" class="dropdown-content">
-  <li><a href="/profile_view">User Profile</a></li>
-  <li class="divider"></li>
   <li><a class="waves-effect waves-light modal-trigger" href="#modal2">Sign Up</a></li>
   <li><a class="waves-effect waves-light modal-trigger" href="#modal1">Log In</a></li>
 </ul>
@@ -14,7 +12,6 @@
             <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons">reorder</i></a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
-            <li><a href="sass.html">User Profile</a></li>
             <li><a class="waves-effect waves-light modal-trigger" href="#modal2">Sign Up</a></li>
             <li><a class="waves-effect waves-light modal-trigger transparent" href="#modal1">Log In</a></li>
         </ul>
