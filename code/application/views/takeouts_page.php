@@ -40,7 +40,7 @@
 											<?php } else if($takeout['payment_stat']==0 && $takeout['price']==null){?>
 												<p>Waiting for driver to input final amount owed...</p>
 												<?php } else{?>
-													<p>Paid!</p>
+													<button class="btn-flat disabled">PAID!</button>
 													<?php } }?>
 							</div>
 					</div>
@@ -61,20 +61,20 @@
 						<?php } else {
 							if($takeout['payment_stat']==1){?>
 								<div class="paid">
-									<h4>Paid!</h4>
+									<button class="btn-flat disabled">PAID!</button>
 								</div>
 								<?php } else {
 							if($takeout['price']==null){?>
 								<form class="form" action="/Takeouts/update_final_price" method="post">
 									<input type="hidden" name="takeout_id" value="<?= $takeout['id']?>">
 									<input type="hidden" name="takeout_fee" value="<?= $takeout['takeout_fee']?>">
-									<label for="price">Final Amount Owed:</label>
+									<label id="amount-owed" for="price">Final Amount Owed:</label>
 									<input type="text" name="price" value="">
-									<input type="submit" name="name" value="Update">
+									<input class="btn magic-btn" type="submit" name="name" value="Update">
 								</form>
 								<?php } else {?>
-									<a href="/Takeouts/update_as_paid/<?= $takeout['id']?>"><button class="btn" type="button" name="button">Mark as Paid</button></a>
-									<a href="/Takeouts/remind/<?= $takeout['id']?>"><button class="btn" type="button" name="button">Remind Friend</button></a>
+									<a href="/Takeouts/update_as_paid/<?= $takeout['id']?>"><button class="btn magic-btn" type="button" name="button">Mark as Paid</button></a>
+									<a href="/Takeouts/remind/<?= $takeout['id']?>"><button class="btn magic-btn" type="button" name="button">Remind Friend</button></a>
 									<?php if($this->session->flashdata('reminder')==$takeout['id']){?><label id="reminder">Reminder has been sent!</label><?php }?>
 									<?php } } }?>
 					</div>

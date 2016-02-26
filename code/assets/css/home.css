@@ -82,3 +82,15 @@ nav {
 	margin-bottom: 15px;
 }
 
+#amount-owed {
+	color: green;
+	font-size: 1.3em;
+}
+
+.btn-flat.disabled {
+	color: green;
+	margin-bottom: 10px;
+}
+
+
+

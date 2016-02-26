@@ -15,7 +15,7 @@
 	<!-- Compiled and minified JavaScript -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
 	<!-- Navigation JS -->
-	<script src="assets/js/nav.js"></script>
+	<script src="/assets/js/nav.js"></script>
 	<!-- My CSS -->
 	<link rel="stylesheet" href="/assets/css/home.css">
 </head>
@@ -39,7 +39,7 @@
 				<div class="del col s2">
 					<div class="card red lighten-3 card-bg">
 						<div class="card-content black-text">
-							<a href="/Notifications/delete/<?= $notification['id']?>"><p class="del">delete<i class="material-icons right">close</i></p></a>
+							<a href="/Notifications/delete/<?= $notification['id']?>"><p class="del"><i class="material-icons">close</i></p></a>
 						</div>
 					</div>
 				</div>
