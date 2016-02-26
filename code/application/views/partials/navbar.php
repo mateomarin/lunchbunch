@@ -10,6 +10,7 @@
         <a href="/index" class="brand-logo"><img width="104" height="64" src="/assets/img/munchbunches.png"></a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
+            <li><a href="/Notifications/notifications_page"><i class="material-icons left">markunread_mailbox</i>Notifications</a></li>
             <li><a href="/Rides/add_new_ride_page"><i class="material-icons left">room</i>Create New Ride</a></li>
             <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons">reorder</i></a></li>
         </ul>

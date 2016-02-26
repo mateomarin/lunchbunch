@@ -26,5 +26,12 @@ class Ride extends CI_Model {
         $values = array($user_id, $ride_id, $user_type);
         return $this->db->query($query, $values);
      }
+
+     function update_seats($ride_id) {
+        $query = "UPDATE rides SET seats_avail = seats_avail - 1 WHERE id = ?";
+        $values = array($ride_id);
+        return $this->db->query($query, $values);
+     }
+
 }
 ?>
