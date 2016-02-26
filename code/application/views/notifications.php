@@ -22,7 +22,11 @@
 <body>
 	<?php require('partials/navbar.php'); ?>
 	<div class="container">
-		<h2 class="center-align notif-heading">Your Notifications</h2>
+		<div class="row">
+			<div class="amber darken-4 header">
+				<h2 class="center-align notif-heading white-text">Your Notifications</h2>
+			</div>
+		</div>
     <?php foreach($notifications as $notification){?>
 			<div class="row">
 					<div class="card grey lighten-3 card-bg col s12">

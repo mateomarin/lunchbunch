@@ -103,9 +103,14 @@ nav {
 
 .notif-heading {
 	font-size: 1.8em;
+	padding-top: 2%;
 }
 
 .bold {
 	font-weight: bold;
+}
+
+.header {
+	height: 100%;
 }
 
