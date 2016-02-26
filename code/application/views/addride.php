@@ -33,6 +33,11 @@
             <select name="seats_avail">
               <option value="" disabled selected>How many places available?</option>
               <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
             </select>
           </div>
         </div>

@@ -26,6 +26,13 @@
       redirect('/Users/success');
     }
 
+    public function unjoin_ride($ride_id) {
+      $user_id = $this->session->userdata('id');
+      $this->Ride->unjoin_ride($ride_id, $user_id);
+      $this->Ride->add_seats($ride_id);
+      redirect('/success');
+    }
+
     public function load_ride_detail($ride_id)
     {
         $rides['rides'] = $this->Ride->get_ride_by_id($ride_id);

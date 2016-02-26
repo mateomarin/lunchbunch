@@ -6,7 +6,7 @@ class Ride extends CI_Model {
      }
      function get_ride_by_day()
      {
-         return $this->db->query("SELECT users.id as user_id, users.first_name, users.last_name, rides.destination_name, rides.departure_time, rides.duration, rides.accepts_order, rides.id as ride_id FROM rides
+         return $this->db->query("SELECT users.id as user_id, users.first_name, users.last_name, rides.destination_name, rides.departure_time, rides.duration, rides.seats_avail, rides.accepts_order, rides.id as ride_id              FROM rides
                                   JOIN user_has_rides ON user_has_rides.ride_id = rides.id
                                   JOIN users ON user_has_rides.user_id = users.id
                                   WHERE rides.created_at = DATE(DATE(NOW())+1) AND user_has_rides.driver = 1
@@ -42,12 +42,19 @@ class Ride extends CI_Model {
 
      function unjoin_ride($ride_id, $user_id) {
         $query = "DELETE FROM user_has_rides WHERE ride_id = ? AND user_id = ?";
+        $values = array($ride_id, $user_id);
+        return $this->db->query($query, $values);
      }
 
      function add_user_ride_rel($user_id, $ride_id, $user_type) {
         $query = "INSERT INTO user_has_rides (user_id, ride_id, driver) VALUES (?, ?, ?)";
         $values = array($user_id, $ride_id, $user_type);
         return $this->db->query($query, $values);
+     }
+
+     function add_seats($ride_id) {
+        $query = "UPDATE rides SET seats_avail = seats_avail + 1 WHERE id = ?";
+        return $this->db->query($query, $ride_id);
      }
 
      function update_seats($ride_id) {
