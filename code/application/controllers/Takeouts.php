@@ -42,6 +42,12 @@
       $this->Takeout->update_as_paid($takeout_id);
       redirect('/Takeouts/load_takeouts_page');
     }
+    public function update_final_price(){
+      $post = $this->input->post();
+      $price = $post['price'] + $post['takeout_fee'];
+      $this->Takeout->driver_inputs_final_price($price, $post['takeout_id']);
+      redirect('/Takeouts/load_takeouts_page');
+    }
   }
 
 ?>
