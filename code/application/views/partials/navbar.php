@@ -7,7 +7,7 @@
 
 <nav>
     <div class="nav-wrapper">
-        <a href="/index" class="brand-logo"><img width="104" height="64" src="/assets/img/munchbunches.png"></a>
+        <a href="/index" class="brand-logo"><img width="210" height="64" src="/assets/img/mblogo.png"></a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
             <li><a href="/Takeouts/load_takeouts_page"><i class="material-icons left">local_dining</i>My Takeouts</a></li>

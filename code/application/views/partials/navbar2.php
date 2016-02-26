@@ -8,7 +8,7 @@
 
 <nav>
     <div class="nav-wrapper">
-        <a href="/index" class="brand-logo"><img width="210" height="64" src="assets/img/transparent.png"></a>
+        <a href="/index" class="brand-logo"><img width="210" height="64" src="assets/img/mblogo.png"></a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">         
             <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons">reorder</i></a></li>

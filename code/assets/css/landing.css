@@ -37,6 +37,7 @@ nav {
 
 .brand-logo {
 	margin-left: 0.2%;
+	max-height: 64px;
 }
 
 video#bgvid { 
