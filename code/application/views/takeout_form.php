@@ -9,18 +9,21 @@
   </head>
   <body>
     <h2>Takeout Order</h2>
-    <form class="form" action="#" method="post">
+    <form class="form" action="/Takeouts/add_takeout" method="post">
+      <input type="hidden" name="ride_id" value="<?= $ride['id']?>">
+      <input type="hidden" name="takeout_fee" value="<?= $ride['takeout_fee']?>">
+
       <div class="row">
         <div class="input-field col s3"></div>
         <div class="input-field col s6">
-          <textarea name="takeout" rows="8" cols="40"></textarea>
-          <label for="takeout">Write out your takeout order:</label>
+          <textarea name="description" rows="8" cols="40"></textarea>
+          <label for="description">Write out your takeout order:</label>
         </div>
         <div class="input-field col s3"></div>
       </div>
       <div class="row">
         <div class="input-field col s6">
-          <p>Driver's Fee: </p>
+          <p>Driver's Fee: <?= $ride['takeout_fee']?></p>
         </div>
         <div class="input-field col s6">
           <input type="submit" name="name" value="Place Order">
