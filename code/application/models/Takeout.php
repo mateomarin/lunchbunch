@@ -5,9 +5,16 @@ class Takeout extends CI_Model {
      {
          return $this->db->query("SELECT * FROM takeouts WHERE user_id = ?", array($user_id))->result_array();
      }
+     function get_takeouts_received_by_user($user_id)
+     {
+          $query = "SELECT takeouts.id, takeouts.description, takeouts.driver_accepts, takeouts.payment_stat FROM takeouts
+               JOIN rides ON takeouts.ride_id=rides.id
+               WHERE rides.driver_id=?";
+         return $this->db->query($query, array($user_id))->result_array();
+     }
      function get_takeouts_by_ride_id($ride_id)
      {
-          $query = "SELECT * FROM takeouts WHERE ride_id=?";
+          $query = "SELECT * FROM takeouts WHERE ride_id=? AND driver_accepts=1";
           return $this->db->query($query,$ride_id)->result_array();
      }
      function add_takeout($takeout, $user_id)
@@ -27,7 +34,7 @@ class Takeout extends CI_Model {
           $data = array($final_price, $takeout_id);
           return $this->db->query($query,$data);
      }
-     function update_payment_stat_to_paid($takeout_id)
+     function update_as_paid($takeout_id)
      {
           $query = "UPDATE takeouts SET payment_stat=1 WHERE id=?";
           return $this->db->query($query,$takeout_id);
