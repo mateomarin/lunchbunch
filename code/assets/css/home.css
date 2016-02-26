@@ -74,8 +74,8 @@ nav {
 	font-size: 1em;
 }
 
-.waiting {
-	color: red;
+.waiting, .red-font {
+	color: red !important;
 }
 
 .magic-btn {
@@ -99,5 +99,13 @@ nav {
 
 .delbtn{
 	color: white;
+}
+
+.notif-heading {
+	font-size: 1.8em;
+}
+
+.bold {
+	font-weight: bold;
 }
 

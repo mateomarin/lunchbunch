@@ -22,12 +22,12 @@
 <body>
 	<?php require('partials/navbar.php'); ?>
 	<div class="container">
-		<h4 class="center-align">Takeout Orders Placed by You</h4>
+		<h4 class="center-align notif-heading">Takeout Orders Placed by You</h4>
     <?php if($takeouts_ordered!=array()){
 			foreach($takeouts_ordered as $takeout){?>
 				<div class="row">
 					<div class="col s12 center-align transparent-bg">
-							<p><?= $takeout['destination_name']?></p>
+							<p class="bold"><?= $takeout['destination_name']?></p>
 							<p>Order: <?= $takeout['description']?></p>
 							<p>Driver: <?= $takeout['first_name']?></p>
 							<div class="col s12 center-align">
@@ -35,7 +35,7 @@
 									<p class="waiting">Waiting for driver to accept...</p>
 									<?php } else {
 										if($takeout['payment_stat']==0 && $takeout['price']!=null){?>
-											<p>Total Amount Owed: <?= $takeout['price']?></p>
+											<p class="red-font">Total Amount Owed: $<?= $takeout['price']?></p>
 											<p class="notpaid">NOT PAID</p>
 											<?php } else if($takeout['payment_stat']==0 && $takeout['price']==null){?>
 												<p>Waiting for driver to input final amount owed...</p>
@@ -46,12 +46,12 @@
 					</div>
 				</div>
     <?php } }?>
-		<h4 class="center-align">Takeout Orders Received from Friends</h4>
+		<h4 class="center-align notif-heading">Takeout Orders Received from Friends</h4>
     <?php if($takeouts_received!=array()){
 			foreach($takeouts_received as $takeout){?>
 				<div class="row">
 					<div class="col s12 center-align transparent-bg">
-							<p><?= $takeout['destination_name']?></p>
+							<p class="bold"><?= $takeout['destination_name']?></p>
 							<p>Order: <?= $takeout['description']?></p>
 							<p>Friend who Ordered: <?= $takeout['first_name']?></p>
 					</div>
