@@ -12,6 +12,21 @@ class Ride extends CI_Model {
      {
          return $this->db->query("SELECT * FROM Rides WHERE id = ?", array($ride_id))->row_array();
      }
+     function get_user_rides($user_id) {
+        $query = "SELECT rides.id from users
+                  JOIN user_has_rides ON users.id = user_has_rides.user_id
+                  JOIN rides ON user_has_rides.ride_id = rides.id
+                  WHERE driver = 0 AND rides.created_at = DATE(NOW()) AND users.id = ?";
+        $values = array($user_id);
+        return $this->db->query($query, $values)->result_array();
+     }
+     function get_all_by_day() {
+        $query = "SELECT * FROM users
+                  JOIN user_has_rides ON users.id = user_has_rides.user_id
+                  JOIN rides ON user_has_rides.ride_id = rides.id
+                  WHERE rides.created_at = DATE(NOW())";
+        return $this->db->query($query)->result_array();
+     }
      function add_ride($ride)
      {
          $query = "INSERT INTO Rides (destination_name, destination_lat, destination_lng, origin_lat, origin_lng, seats_avail, departure_time, created_at, updated_at, duration, accepts_order) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
