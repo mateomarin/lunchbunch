@@ -59,3 +59,8 @@ nav {
 .card, .card-action {
 	text-align: center;
 }
+
+.card.small .card-image, .card.medium .card-image, .card.large .card-image {
+	max-height: 75%;
+	overflow: hidden;
+}
