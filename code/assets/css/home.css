@@ -45,7 +45,8 @@ nav {
 }
 
 .brand-logo {
-	margin-left: 20px;
+	margin-left: 0.2%;
+	max-height: 64px;
 }
 
 .card-bg, .grey.lighten-3, .transparent-bg {
@@ -107,7 +108,7 @@ nav {
 }
 
 .bold {
-	font-weight: bold;
+	font-weight: bold !important;
 }
 
 .header {

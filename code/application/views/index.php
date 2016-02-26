@@ -23,16 +23,18 @@
 	<div class="container">
 		<div class="row">
 			<div class="col s12 card-wrapper">
-				<div class="card grey lighten-3">
-					<div class="card-content black-text">
-						<span class="card-title">Have Lunch With Us</span>
-						<p>Connecting friends with lunch</p>
+					<div class="white-text center-align">
+						<p class="bigger bolder">Come Lunch With Us</p>
+						<p class="smaller bolder">Connecting Friends With Food</p>
+						<div class="row">
+							<div class="col s6 right-align">
+								<a class="waves-effect waves-light modal-trigger btn landing-btn" href="#modal2">Sign Up</a>
+							</div>
+							<div class="col s6 left-align">
+								<a class="waves-effect waves-light modal-trigger btn landing-btn" href="#modal1">Log In</a>
+							</div>
+	  					</div>
 					</div>
-					<div class="card-action">
-						<a class="waves-effect waves-light modal-trigger" href="#modal2">Sign Up</a>
-  						<a class="waves-effect waves-light modal-trigger" href="#modal1">Log In</a>
-					</div>
-				</div>
 			</div>
 		</div>
         <div class="fullscreen-bg">
