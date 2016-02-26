@@ -35,8 +35,8 @@
                             <ul>
                                 <li>Where to: <?= $rides['destination_name'] ?></li>
                                 <li>Number of Available Seats: <?= $rides['seats_avail'] ?></li>
-                                <li>Dining Status: <?php if ($rides['duration'] === 1) {
-                                    echo "Eat There";
+                                <li>Dining Status: <?php if ($rides['duration'] == 1) {
+                                    echo "Dine There";
                                 } else {
                                     echo "Takeout";
                                   } ?>
@@ -49,13 +49,11 @@
                                   }  ?>
                                 </li>
                             </ul>
-                            <a href="#"><button class="btn">Place Order</button></a>
+                            <a class="waves-effect waves-light btn modal-trigger" href="#modal3">Place Order</a>
                         </div>
                     </div>
                 </div>
-              <div class="ridedetail">
-                  
-              </div>
+              <?php require('partials/takeoutmodal.php') ?>
             </div>
       </div>
     </body>
