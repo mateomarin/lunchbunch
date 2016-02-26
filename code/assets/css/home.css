@@ -48,7 +48,7 @@ nav {
 	margin-left: 20px;
 }
 
-.card-bg, .grey.lighten-3 {
+.card-bg, .grey.lighten-3, .transparent-bg {
 	background: rgba(255,255,255,0.7) !important;
 }
 
@@ -73,3 +73,12 @@ nav {
 	color: red;
 	font-size: 1em;
 }
+
+.waiting {
+	color: red;
+}
+
+.magic-btn {
+	margin-bottom: 15px;
+}
+

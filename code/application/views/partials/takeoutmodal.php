@@ -1,7 +1,7 @@
 <div id="modal3" class="modal">
     <div class="modal-content">
         <div class="row">
-            <form action="/Takeouts/add_takeout" class="col s12">
+            <form action="/Takeouts/add_takeout" method="post" class="col s12">
                 <input type="hidden" name="ride_id" value="<?= $rides['id']?>">
                 <input type="hidden" name="takeout_fee" value="<?= $rides['takeout_fee']?>">
                 <div class="row">
