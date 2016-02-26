@@ -22,7 +22,7 @@ nav {
 	margin-top: 15px;
 }
 
-.validate {
+.validate, .title {
 	color: black;
 }
 
@@ -44,6 +44,6 @@ nav {
 	margin-left: 20px;
 }
 
-.contents {
-	background: rgba(255,255,255,0.7);
+.card-bg, .grey.lighten-3 {
+	background: rgba(255,255,255,0.7) !important;
 }

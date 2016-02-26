@@ -20,10 +20,9 @@
       } else {
         $ride['accepts_order']= 0;
       }
-      $ride_id0 = $this->Ride->add_ride($ride);
+      $ride_id0 = $this->Ride->add_ride($ride, $user_id);
       $ride_id = strval($ride_id0);
       $this->Ride->add_user_ride_rel($user_id, $ride_id, 1);
-      $this->Notification->add_ride_notification($user_id,1,$ride_id);
       redirect('/Users/success');
     }
 

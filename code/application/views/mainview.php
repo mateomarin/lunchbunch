@@ -21,18 +21,32 @@
 <body>
 	<?php require('partials/navbar.php'); ?>
 	<div class="container">
-<?php 	foreach($rides as $ride) { ?>
+<?php 	foreach($rides as $ride) { 
+			$passenger = 0;      ?>
 		<div class="row">
-			<div class="col s12 contents">
-				<div class="card grey lighten-3">
+			<div class="col s12">
+				<div class="card grey lighten-3 card-bg">
 					<div class="card-content black-text">
-						<a class="card-title" href="/Rides/load_ride_detail/<?= $ride['id'] ?>"><h3><?= $ride['destination_name'] ?></h3></a>
-						<p><?= $ride['created_at'] ?></p>
+						<a class="title" href="/Rides/load_ride_detail/<?= $ride['ride_id'] ?>"><h3 class="card-title center-align"><?= $ride['destination_name'] ?></h3></a>
+						<p><?= $ride['first_name'] . ' ' . $ride['last_name'] ?></p>
 						<p><?= $ride['departure_time'] ?></p>
 					</div>
+<?php   	foreach($user_rides as $u_ride) { 
+				if ($ride['ride_id'] === $u_ride['id']) { 
+					$passenger = 1;
+				}	
+			} ?>
+<?php 		if ($ride['user_id'] !== $this->session->userdata('id')) {
+				if ($passenger === 0) { ?>
 					<div class="card-action">
-						<a href="/Rides/join_ride/<?= $ride['id'] ?>"><button class="btn-flat">Join Ride</button></a>
+						<a href="/Rides/join_ride/<?= $ride['ride_id'] ?>">Join Ride</a>
 					</div>
+<?php			} else { ?>
+					<div class="card-action">
+						<a href="/Rides/unjoin_ride/<?= $ride['ride_id'] ?>">Unjoin Ride</a>
+					</div>
+<?php    		  }	 
+			}	?>
 				</div>
 			</div>
 		</div>
