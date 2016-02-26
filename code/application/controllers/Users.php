@@ -15,7 +15,7 @@
       else {
         $user_id = $this->session->userdata('id');
         $rides['user_rides'] = $this->Ride->get_user_rides($user_id);
-        $rides['rides'] = $this->Ride->get_all_by_day();
+        $rides['rides'] = $this->Ride->get_ride_by_day();
         $this->load->view('mainview', $rides);
       }
     }
@@ -33,7 +33,7 @@
     public function success(){
       $user_id = $this->session->userdata('id');
       $rides['user_rides'] = $this->Ride->get_user_rides($user_id);
-      $rides['rides'] = $this->Ride->get_all_by_day();
+      $rides['rides'] = $this->Ride->get_ride_by_day();
       $this->load->view('mainview', $rides);
     }
 

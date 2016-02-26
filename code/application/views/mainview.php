@@ -27,25 +27,26 @@
 			<div class="col s12">
 				<div class="card grey lighten-3 card-bg">
 					<div class="card-content black-text">
-						<a class="title" href="/Rides/load_ride_detail/<?= $ride['id'] ?>"><h3 class="card-title center-align"><?= $ride['destination_name'] ?></h3></a>
+						<a class="title" href="/Rides/load_ride_detail/<?= $ride['ride_id'] ?>"><h3 class="card-title center-align"><?= $ride['destination_name'] ?></h3></a>
 						<p><?= $ride['first_name'] . ' ' . $ride['last_name'] ?></p>
 						<p><?= $ride['departure_time'] ?></p>
 					</div>
 <?php   	foreach($user_rides as $u_ride) { 
-				if ($ride['id'] === $u_ride['id']) { 
+				if ($ride['ride_id'] === $u_ride['id']) { 
 					$passenger = 1;
 				}	
 			} ?>
-<?php 		
-			if ($passenger === 0) { ?>
-				<div class="card-action">
-					<a href="/Rides/join_ride/<?= $ride['id'] ?>">Join Ride</a>
-				</div>
-<?php		} else { ?>
-				<div class="card-action">
-					<a href="/Rides/unjoin_ride/<?= $ride['id'] ?>">Unjoin Ride</a>
-				</div>
-<?php    	}	?>
+<?php 		if ($ride['user_id'] !== $this->session->userdata('id')) {
+				if ($passenger === 0) { ?>
+					<div class="card-action">
+						<a href="/Rides/join_ride/<?= $ride['ride_id'] ?>">Join Ride</a>
+					</div>
+<?php			} else { ?>
+					<div class="card-action">
+						<a href="/Rides/unjoin_ride/<?= $ride['ride_id'] ?>">Unjoin Ride</a>
+					</div>
+<?php    		  }	 
+			}	?>
 				</div>
 			</div>
 		</div>
