@@ -16,8 +16,12 @@
     public function add_new_ride($user_id){
       $ride=$this->input->post();
       $ride['departure_time']=date("Y-m-d, h:i:s",strtotime($ride['departure_time']));
-      if($ride['accepts_order']=='on'){
-        $ride['accepts_order']=1;
+      if(isset($ride['accepts_order'])){
+        if($ride['accepts_order']=='on'){
+          $ride['accepts_order']=1;
+        } else {
+          $ride['accepts_order']= 0;
+        }
       } else {
         $ride['accepts_order']= 0;
       }
