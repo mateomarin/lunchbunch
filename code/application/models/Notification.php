@@ -17,7 +17,7 @@ class Notification extends CI_Model {
      }
      function add_ride_notification($user_id, $notification_id, $ride_id)
      {
-         $query = "INSERT INTO users_has_notifications (user_id, takeout_id, notification_id, created_at, ride_id) VALUES (?,1,?,?,?)";
+         $query = "INSERT INTO users_has_notifications (user_id, takeout_id, notification_id, created_at, ride_id) VALUES (?,null,?,?,?)";
          $values = array($user_id, $notification_id, date("Y-m-d, H:i:s"), $ride_id);
          return $this->db->query($query, $values);
      }
