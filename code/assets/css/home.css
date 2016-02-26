@@ -107,10 +107,12 @@ nav {
 }
 
 .bold {
-	font-weight: bold;
+	font-weight: bold !important;
 }
 
 .header {
 	height: 100%;
 }
+
+
 
