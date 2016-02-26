@@ -40,6 +40,10 @@ class Ride extends CI_Model {
          return $insert_id;
      }
 
+     function unjoin_ride($ride_id, $user_id) {
+        $query = "DELETE FROM user_has_rides WHERE ride_id = ? AND user_id = ?";
+     }
+
      function add_user_ride_rel($user_id, $ride_id, $user_type) {
         $query = "INSERT INTO user_has_rides (user_id, ride_id, driver) VALUES (?, ?, ?)";
         $values = array($user_id, $ride_id, $user_type);
