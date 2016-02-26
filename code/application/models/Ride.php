@@ -31,10 +31,10 @@ class Ride extends CI_Model {
                   WHERE rides.created_at = DATE(DATE(NOW())+1)";
         return $this->db->query($query)->result_array();
      }
-     function add_ride($ride)
+     function add_ride($ride, $user_id)
      {
-         $query = "INSERT INTO Rides (destination_name, destination_lat, destination_lng, origin_lat, origin_lng, seats_avail, departure_time, created_at, updated_at, duration, accepts_order) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
-         $values = array($ride['destination_name'], $ride['destination_lat'], $ride['destination_lng'], $ride['origin_lat'], $ride['origin_lng'],$ride['seats_avail'], $ride['departure_time'], date("Y-m-d"), date("Y-m-d, H:i:s"), $ride['duration'], $ride['accepts_order']);
+         $query = "INSERT INTO Rides (destination_name, destination_lat, destination_lng, origin_lat, origin_lng, seats_avail, departure_time, created_at, updated_at, duration, accepts_order, driver_id) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+         $values = array($ride['destination_name'], $ride['destination_lat'], $ride['destination_lng'], $ride['origin_lat'], $ride['origin_lng'],$ride['seats_avail'], $ride['departure_time'], date("Y-m-d"), date("Y-m-d, H:i:s"), $ride['duration'], $ride['accepts_order'], $user_id);
          $this->db->query($query, $values);
          $insert_id = $this->db->insert_id();
          return $insert_id;

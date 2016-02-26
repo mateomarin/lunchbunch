@@ -15,10 +15,10 @@ class Notification extends CI_Model {
                     WHERE users.id=?";
          return $this->db->query($query, $user_id)->result_array();
      }
-     function add_ride_notification($user_id, $notification_id, $ride_id)
+     function add_notification($user_id, $notification_id)
      {
          $query = "INSERT INTO users_has_notifications (user_id, takeout_id, notification_id, created_at, ride_id) VALUES (?,1,?,?,?)";
-         $values = array($user_id, $notification_id, date("Y-m-d, H:i:s"), $ride_id);
+         $values = array($user_id, $notification_id, date("Y-m-d, H:i:s"));
          return $this->db->query($query, $values);
      }
 }
