@@ -7,7 +7,7 @@ class Takeout extends CI_Model {
      }
      function get_takeouts_received_by_user($user_id)
      {
-          $query = "SELECT takeouts.id, takeouts.description, takeouts.driver_accepts, takeouts.payment_stat FROM takeouts
+          $query = "SELECT takeouts.id, takeouts.price, rides.takeout_fee, takeouts.description, takeouts.driver_accepts, takeouts.payment_stat, rides.id as ride_id FROM takeouts
                JOIN rides ON takeouts.ride_id=rides.id
                WHERE rides.driver_id=?";
          return $this->db->query($query, array($user_id))->result_array();

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Takeouts</title>
-	
+
 	<!-- jQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	<!--Import Google Icon Font-->
@@ -33,11 +33,13 @@
 						<?php if($takeout['driver_accepts']==0){?>
 							<p>Waiting for driver to accept...</p>
 							<?php } else {
-								if($takeout['payment_stat']==0){?>
-									<p>You didn't pay yet!</p>
-									<?php } else {?>
-										<p>Paid!</p>
-										<?php } }?>
+								if($takeout['payment_stat']==0 && $takeout['price']!=null){?>
+									<p>Total Amount Owed: <?= $takeout['price']?></p>
+									<?php } else if($takeout['payment_stat']==0 && $takeout['price']==null){?>
+										<p>Waiting for driver to input final amount owed...</p>
+										<?php } else{?>
+											<p>Paid!</p>
+											<?php } }?>
 					</div>
 				</div>
     <?php } }?>
@@ -57,9 +59,17 @@
 									<h4>Paid!</h4>
 								</div>
 								<?php } else {
-							?>
-							<a href="/Takeouts/update_as_paid/<?= $takeout['id']?>"><button type="button" name="button">Mark as Paid</button></a>
-							<?php } }?>
+							if($takeout['price']==null){?>
+								<form class="form" action="/Takeouts/update_final_price" method="post">
+									<input type="hidden" name="takeout_id" value="<?= $takeout['id']?>">
+									<input type="hidden" name="takeout_fee" value="<?= $takeout['takeout_fee']?>">
+									<label for="price">Final Amount Owed:</label>
+									<input type="text" name="price" value="">
+									<input type="submit" name="name" value="Update">
+								</form>
+								<?php } else {?>
+									<a href="/Takeouts/update_as_paid/<?= $takeout['id']?>"><button type="button" name="button">Mark as Paid</button></a>
+									<?php } } }?>
 					</div>
 					<div class="col s5">
 
