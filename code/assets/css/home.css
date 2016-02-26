@@ -47,3 +47,15 @@ nav {
 .card-bg, .grey.lighten-3 {
 	background: rgba(255,255,255,0.7) !important;
 }
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-floating) {
+	color: #039be5;
+}
+
+.btn.disabled, .disabled.btn-large, .btn-floating.disabled, .btn-large.disabled, .btn:disabled, .btn-large:disabled, .btn-large:disabled, .btn-floating:disabled {
+	color: #B71C1C !important;
+}
+
+.card, .card-action {
+	text-align: center;
+}
