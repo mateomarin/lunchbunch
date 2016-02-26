@@ -32,6 +32,7 @@
 				<div class="row">
 					<div class="col s12 center-align transparent-bg">
 							<p class="bold"><?= $takeout['destination_name']?></p>
+							<p>Date: <?= $takeout['created_at']?></p>
 							<p>Order: <?= $takeout['description']?></p>
 							<p>Driver: <?= $takeout['first_name']?></p>
 							<div class="col s12 center-align">
@@ -60,6 +61,7 @@
 				<div class="row">
 					<div class="col s12 center-align transparent-bg">
 							<p class="bold"><?= $takeout['destination_name']?></p>
+							<p>Date: <?= $takeout['takeout_date']?></p>
 							<p>Order: <?= $takeout['description']?></p>
 							<p>Friend who Ordered: <?= $takeout['first_name']?></p>
 					</div>

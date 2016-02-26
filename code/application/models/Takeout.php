@@ -3,7 +3,7 @@ class Takeout extends CI_Model {
 
      function get_takeouts_by_user_id($user_id)
      {
-          $query = "SELECT takeouts.description, takeouts.payment_stat, takeouts.driver_accepts, takeouts.price, users.first_name, rides.destination_name
+          $query = "SELECT takeouts.created_at, takeouts.description, takeouts.payment_stat, takeouts.driver_accepts, takeouts.price, users.first_name, rides.destination_name
           FROM takeouts
           JOIN rides ON takeouts.ride_id=rides.id
           JOIN users ON rides.driver_id=users.id
@@ -12,7 +12,7 @@ class Takeout extends CI_Model {
      }
      function get_takeouts_received_by_user($user_id)
      {
-          $query = "SELECT users.first_name, takeouts.id, takeouts.price, rides.takeout_fee, takeouts.description, takeouts.driver_accepts, takeouts.payment_stat, rides.id as ride_id, rides.destination_name, rides.created_at
+          $query = "SELECT takeouts.created_at as takeout_date, users.first_name, takeouts.id, takeouts.price, rides.takeout_fee, takeouts.description, takeouts.driver_accepts, takeouts.payment_stat, rides.id as ride_id, rides.destination_name, rides.created_at
                     FROM takeouts
                     JOIN rides ON takeouts.ride_id=rides.id
                     JOIN users ON users.id=takeouts.user_id
