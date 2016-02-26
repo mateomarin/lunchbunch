@@ -14,7 +14,7 @@
       $user_id = $this->session->userdata('id');
       $takeout = $this->input->post();
       $this->Takeout->add_takeout($takeout, $user_id);
-      redirect('/Takeouts/load_takeouts/'.$takeout['ride_id']);
+      redirect('/Takeouts/load_takeouts_page/'.$takeout['ride_id']);
     }
     public function add_takeout_form($ride_id)
     {

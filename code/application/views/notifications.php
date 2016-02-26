@@ -15,28 +15,26 @@
 	<!-- Compiled and minified JavaScript -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
 	<!-- Navigation JS -->
-	<script src="assets/js/nav.js"></script>
+	<script src="/assets/js/nav.js"></script>
 	<!-- My CSS -->
 	<link rel="stylesheet" href="/assets/css/home.css">
 </head>
 <body>
 	<?php require('partials/navbar.php'); ?>
 	<div class="container">
-		<h2>Your Notifications</h2>
+		<h2 class="center-align notif-heading">Your Notifications</h2>
     <?php foreach($notifications as $notification){?>
 			<div class="row">
 					<div class="card grey lighten-3 card-bg col s12">
 						<div class="card-content black-text col s11">
-							<p><?= $notification['destination_name']?></p>
+							<p class="bold"><?= $notification['destination_name']?></p>
 							<p><?= $notification['first_name']." ".$notification['notification']." - ".$notification['diff']?></p>
 							<?php if($notification['price']!=null && $notification['notif_id']>=4){?>
-								<p>$<?=$notification['fee']?> (takeout fee) + $<?= $notification['price']?> (takeout bill) = $<?= $notification['price']+$notification['fee']?> (final amount owed)</p>
+								<p class="red-font">$<?=$notification['fee']?> (takeout fee) + $<?= $notification['price']?> (takeout bill) = $<?= $notification['price']+$notification['fee']?> (final amount owed)</p>
 								<?php }?>
 						</div>
-						<div class="del card red darken-4 card-bg col s1">
-							<div class="card-content black-text">
-								<a href="/Notifications/delete/<?= $notification['id']?>"><i class="material-icons delbtn">close</i></a>
-							</div>
+						<div class="card-action">
+							<a href="/Notifications/delete/<?= $notification['id']?>"><i class="material-icons">close</i></a>
 						</div>
 					</div>
 			</div>
