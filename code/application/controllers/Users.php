@@ -14,6 +14,7 @@
       }
       else {
         $user_id = $this->session->userdata('id');
+        $rides['user'] = $this->User->get_user_by_id($user_id);
         $rides['user_rides'] = $this->Ride->get_user_rides($user_id);
         $rides['rides'] = $this->Ride->get_ride_by_day();
         $this->load->view('mainview', $rides);
@@ -32,6 +33,7 @@
     //This function redirects to loadwall once it updates the user session ID
     public function success(){
       $user_id = $this->session->userdata('id');
+      $rides['user'] = $this->User->get_user_by_id($user_id);
       $rides['user_rides'] = $this->Ride->get_user_rides($user_id);
       $rides['rides'] = $this->Ride->get_ride_by_day();
       $this->load->view('mainview', $rides);

@@ -9,7 +9,7 @@ class Ride extends CI_Model {
          return $this->db->query("SELECT users.id as user_id, users.first_name, users.last_name, rides.destination_name, rides.departure_time, rides.duration, rides.seats_avail, rides.accepts_order, rides.id as ride_id              FROM rides
                                   JOIN user_has_rides ON user_has_rides.ride_id = rides.id
                                   JOIN users ON user_has_rides.user_id = users.id
-                                  WHERE rides.created_at = DATE(DATE(NOW())+1) AND user_has_rides.driver = 1
+                                  WHERE rides.created_at = DATE(NOW()) AND user_has_rides.driver = 1
                                   ORDER BY rides.updated_at desc")->result_array();
      }
      function get_ride_by_id($ride_id)
@@ -20,7 +20,7 @@ class Ride extends CI_Model {
         $query = "SELECT rides.id from users
                   JOIN user_has_rides ON users.id = user_has_rides.user_id
                   JOIN rides ON user_has_rides.ride_id = rides.id
-                  WHERE user_has_rides.driver = 0 AND rides.created_at = DATE(DATE(NOW())+1) AND users.id = ?";
+                  WHERE user_has_rides.driver = 0 AND rides.created_at = DATE(NOW()) AND users.id = ?";
         $values = array($user_id);
         return $this->db->query($query, $values)->result_array();
      }

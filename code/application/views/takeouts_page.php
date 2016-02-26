@@ -26,20 +26,23 @@
     <?php if($takeouts_ordered!=array()){
 			foreach($takeouts_ordered as $takeout){?>
 				<div class="row">
-					<div class="col s3">
-						<p><?= $takeout['description']?></p>
-					</div>
-					<div class="col s4">
-						<?php if($takeout['driver_accepts']==0){?>
-							<p>Waiting for driver to accept...</p>
-							<?php } else {
-								if($takeout['payment_stat']==0 && $takeout['price']!=null){?>
-									<p>Total Amount Owed: <?= $takeout['price']?></p>
-									<?php } else if($takeout['payment_stat']==0 && $takeout['price']==null){?>
-										<p>Waiting for driver to input final amount owed...</p>
-										<?php } else{?>
-											<p>Paid!</p>
-											<?php } }?>
+					<div class="row">
+							<p><?= $takeout['destination_name']?></p>
+							<p>Order: <?= $takeout['description']?></p>
+							<p>Driver: <?= $takeout['first_name']?></p>
+							<div>
+								<?php if($takeout['driver_accepts']==0){?>
+									<p>Waiting for driver to accept...</p>
+									<?php } else {
+										if($takeout['payment_stat']==0 && $takeout['price']!=null){?>
+											<p>Total Amount Owed: <?= $takeout['price']?></p>
+											<p class="notpaid">NOT PAID</p>
+											<?php } else if($takeout['payment_stat']==0 && $takeout['price']==null){?>
+												<p>Waiting for driver to input final amount owed...</p>
+												<?php } else{?>
+													<p>Paid!</p>
+													<?php } }?>
+						</div>
 					</div>
 				</div>
     <?php } }?>
@@ -47,10 +50,12 @@
     <?php if($takeouts_received!=array()){
 			foreach($takeouts_received as $takeout){?>
 				<div class="row">
-					<div class="col s3">
-						<p><?= $takeout['description']?></p>
+					<div class="row">
+							<p><?= $takeout['destination_name']?></p>
+							<p>Order: <?= $takeout['description']?></p>
+							<p>Friend who Ordered: <?= $takeout['first_name']?></p>
 					</div>
-					<div class="col s4">
+					<div>
 						<?php if($takeout['driver_accepts']==0){?>
 						<a href="/Takeouts/driver_accepts/<?= $takeout['id']?>"><button type="button" name="button">Accept Takeout</button></a>
 						<?php } else {
@@ -69,10 +74,9 @@
 								</form>
 								<?php } else {?>
 									<a href="/Takeouts/update_as_paid/<?= $takeout['id']?>"><button type="button" name="button">Mark as Paid</button></a>
+									<a href="/Takeouts/remind/<?= $takeout['id']?>"><button type="button" name="button">Remind Friend</button></a>
+									<?php if($this->session->flashdata('reminder')==$takeout['id']){?><label id="reminder">Reminder has been sent!</label><?php }?>
 									<?php } } }?>
-					</div>
-					<div class="col s5">
-
 					</div>
 				</div>
     <?php } }?>

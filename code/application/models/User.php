@@ -15,9 +15,18 @@ class User extends CI_Model {
      function add_user($user)
      {
         date_default_timezone_set('America/Los_Angeles');
-        $query = "INSERT INTO Users (first_name, last_name, email, password, created_at, updated_at) VALUES (?,?,?,?,?,?)";
-        $values = array($user['first_name'], $user['last_name'], $user['email'], $user['password'], date('Y-m-d, H:i:s'), date('Y-m-d, H:i:s'));
+        $query = "INSERT INTO Users (first_name, last_name, email, password, created_at, updated_at, old_notif, new_notif) VALUES (?,?,?,?,?,?,?,?)";
+        $values = array($user['first_name'], $user['last_name'], $user['email'], $user['password'], date('Y-m-d, H:i:s'), date('Y-m-d, H:i:s'),0,0);
         return $this->db->query($query, $values);
      }
+     function new_notification_number($user_id)
+     {
+          return $this->db->query("UPDATE users SET new_notif = new_notif + 1 WHERE id=?", $user_id);
+     }
+     function update_old_notification_number($user_id)
+     {
+          return $this->db->query("UPDATE users SET old_notif = new_notif WHERE id=?", $user_id);
+     }
+
 }
 ?>

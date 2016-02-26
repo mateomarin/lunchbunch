@@ -3,19 +3,30 @@ class Takeout extends CI_Model {
 
      function get_takeouts_by_user_id($user_id)
      {
-         return $this->db->query("SELECT * FROM takeouts WHERE user_id = ?", array($user_id))->result_array();
+          $query = "SELECT takeouts.description, takeouts.payment_stat, takeouts.driver_accepts, takeouts.price, users.first_name, rides.destination_name
+          FROM takeouts
+          JOIN rides ON takeouts.ride_id=rides.id
+          JOIN users ON rides.driver_id=users.id
+          WHERE takeouts.user_id=?";
+         return $this->db->query($query, array($user_id))->result_array();
      }
      function get_takeouts_received_by_user($user_id)
      {
-          $query = "SELECT takeouts.id, takeouts.price, rides.takeout_fee, takeouts.description, takeouts.driver_accepts, takeouts.payment_stat, rides.id as ride_id FROM takeouts
-               JOIN rides ON takeouts.ride_id=rides.id
-               WHERE rides.driver_id=?";
+          $query = "SELECT users.first_name, takeouts.id, takeouts.price, rides.takeout_fee, takeouts.description, takeouts.driver_accepts, takeouts.payment_stat, rides.id as ride_id, rides.destination_name, rides.created_at
+                    FROM takeouts
+                    JOIN rides ON takeouts.ride_id=rides.id
+                    JOIN users ON users.id=takeouts.user_id
+                    WHERE rides.driver_id=?";
          return $this->db->query($query, array($user_id))->result_array();
      }
      function get_takeouts_by_ride_id($ride_id)
      {
-          $query = "SELECT * FROM takeouts WHERE ride_id=? AND driver_accepts=1";
+          $query = "SELECT * FROM takeouts JOIN users ON takeouts.user_id=users.id WHERE ride_id=?";
           return $this->db->query($query,$ride_id)->result_array();
+     }
+     function get_takeout_by_id($takeout_id)
+     {
+          return $this->db->query("SELECT * FROM takeouts WHERE id=?",$takeout_id)->row_array();
      }
      function add_takeout($takeout, $user_id)
      {

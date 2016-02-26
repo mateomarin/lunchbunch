@@ -1,7 +1,7 @@
 html, body {
 	width: 100%;
 	height: 100%;
-	background: url('/assets/img/food1.jpg') no-repeat center center fixed; 
+	background: url('/assets/img/food1.jpg') no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -11,6 +11,10 @@ html, body {
 nav {
 	background: rgba(0, 0, 0, 0.7);
 
+}
+
+.notpaid {
+	color:red;
 }
 
 .dropdown-content li>a {
@@ -63,4 +67,9 @@ nav {
 .card.small .card-image, .card.medium .card-image, .card.large .card-image {
 	max-height: 75%;
 	overflow: hidden;
+}
+
+#reminder{
+	color: red;
+	font-size: 1em;
 }

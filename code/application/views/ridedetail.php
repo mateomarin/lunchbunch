@@ -50,11 +50,20 @@
                                 </li>
                             </ul>
                             <a href="#"><button class="btn">Place Order</button></a>
+                            <?php if($rides['driver_id']==$this->session->userdata('id')){
+                                ?><h5>Orders Taken:</h5><?php
+                                $count = 1;
+                                foreach($takeouts as $takeout){?>
+                                    <div class="row">
+                							<p><?= $count?>. Order: <?= $takeout['description']?></p>
+                							<p>Friend who Ordered: <?= $takeout['first_name']?></p>
+                					</div>
+                                <?php $count+=1;} }?>
                         </div>
                     </div>
                 </div>
               <div class="ridedetail">
-                  
+
               </div>
             </div>
       </div>
