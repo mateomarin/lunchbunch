@@ -25,24 +25,20 @@
 		<h2>Your Notifications</h2>
     <?php foreach($notifications as $notification){?>
 			<div class="row">
-				<div class="col s10">
-					<div class="card grey lighten-3 card-bg">
-						<div class="card-content black-text">
+					<div class="card grey lighten-3 card-bg col s12">
+						<div class="card-content black-text col s11">
 							<p><?= $notification['destination_name']?></p>
 							<p><?= $notification['first_name']." ".$notification['notification']." - ".$notification['diff']?></p>
 							<?php if($notification['price']!=null && $notification['notif_id']>=4){?>
 								<p>$<?=$notification['fee']?> (takeout fee) + $<?= $notification['price']?> (takeout bill) = $<?= $notification['price']+$notification['fee']?> (final amount owed)</p>
 								<?php }?>
 						</div>
-					</div>
-				</div>
-				<div class="del col s2">
-					<div class="card red lighten-3 card-bg">
-						<div class="card-content black-text">
-							<a href="/Notifications/delete/<?= $notification['id']?>"><p class="del">delete<i class="material-icons right">close</i></p></a>
+						<div class="del card red darken-4 card-bg col s1">
+							<div class="card-content black-text">
+								<a href="/Notifications/delete/<?= $notification['id']?>"><i class="material-icons delbtn">close</i></a>
+							</div>
 						</div>
 					</div>
-				</div>
 			</div>
     <?php }?>
 	</div>
